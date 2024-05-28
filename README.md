@@ -8,7 +8,7 @@ If you are using a `Listener` or using the `Subscribe` annotation,
 you're going to need to have an `Event`.
 
 ```java 
-import net.nerites.event.manager.EventManager;
+import net.caden.event.manager.EventManager;
 
 public class MyTestClass {
     EventManager EVENT_BUS = new EventManager();
@@ -19,8 +19,8 @@ Creating an `Event` is super easy, you can use the `Cancelable` annotation to gi
 if `Cancelable` is not present, the event will become uncancelable.
 
 ```java
-import net.nerites.event.Event;
-import net.nerites.event.annotations.Cancelable;
+import net.caden.event.Event;
+import net.caden.event.annotations.Cancelable;
 
 @Cancelable // putting this here will allow it to be canceled
 public class MyTestEvent extends Event {
@@ -42,9 +42,9 @@ It is also important to put your parent in the `Listener` as it allows it to acc
 When the `Listener` is sent to the `EventManager` it looks for `Listen`, which it uses the **method** that is connected with that annotation and invokes it.
 
 ```java
-import net.nerites.event.Listener;
-import net.nerites.event.annotations.EventInfo;
-import net.nerites.event.annotations.Listen;
+import net.caden.event.Listener;
+import net.caden.event.annotations.EventInfo;
+import net.caden.event.annotations.Listen;
 
 @EventInfo(MyTestEvent.class) // has to be here or the EventManager won't be able to use this listener.
 public class MyTestListener extends Listener<MyTestClass> {
@@ -67,8 +67,8 @@ Using the **subscribe** method in the same class as any method with the `Subscri
 Will allow the `EventManager` to put it in its map.
 
 ```java
-import net.nerites.event.annotations.Subscribe;
-import net.nerites.event.manager.EventManager;
+import net.caden.event.annotations.Subscribe;
+import net.caden.event.manager.EventManager;
 
 public class MyTestClass {
     EventManager EVENT_BUS = new EventManager();
@@ -93,9 +93,9 @@ public class MyTestClass {
 ## All Test Code
 
 ```java
-import net.nerites.event.Event;
-import net.nerites.event.annotations.Cancelable;
-import net.nerites.event.manager.EventManager;
+import net.caden.event.Event;
+import net.caden.event.annotations.Cancelable;
+import net.caden.event.manager.EventManager;
 
 public class MyTestClass {
     EventManager EVENT_BUS = new EventManager();
