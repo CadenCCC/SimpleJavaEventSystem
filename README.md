@@ -1,3 +1,7 @@
+# coming soon
+
+
+
 # Java Event System
 This is a basic proof of concept. How you use it is up to you.
 Zero updates will be given to this repo unless a problem happens with new Java versions or someone points out a problem to me.
