@@ -3,9 +3,9 @@ This is a basic proof of concept. How you use it is up to you.
 Zero updates will be given to this repo unless a problem happens with new Java versions or someone points out a problem to me.
 
 # How to Use
-In order to use we need to invoke the `EventManager`[^1].
-If you are using a `Listener`[^2] or using the `Subscribe`[^3] annotation, 
-you're going to need to have an `Event`[^4].
+In order to use we need to invoke the `EventManager`.
+If you are using a `Listener` or using the `Subscribe` annotation, 
+you're going to need to have an `Event`.
 
 ```java 
 import net.nerites.event.manager.EventManager;
@@ -15,8 +15,8 @@ public class MyTestClass {
 }
 ```
 
-Creating an `Event`[^4] is super easy, you can use the `Cancelable`[^5] annotation to give it the possibility to be canceled.
-if `Cancelable`[^5] is not present, the event will become uncancelable.
+Creating an `Event` is super easy, you can use the `Cancelable` annotation to give it the possibility to be canceled.
+if `Cancelable` is not present, the event will become uncancelable.
 
 ```java
 import net.nerites.event.Event;
@@ -36,10 +36,10 @@ public class MyTestEvent extends Event {
 }
 ```
 
-Creating a `Listener`[^2] is just as easy, you can do this by just creating a **class** and extending `Listener`[^2]
-and adding the annotation `EventInfo`[^6]. Adding that annotation is important because the `Listener`[^2] will not work without it as it needs to be there to identify the `Event`[^4].
-It is also important to put your parent in the `Listener`[^2] as it allows it to access the parent.
-When the `Listener`[^2] is sent to the `EventManager`[^1] it looks for `Listen`[^7], which it uses the **method** that is connected with that annotation and invokes it.
+Creating a `Listener` is just as easy, you can do this by just creating a **class** and extending `Listener`
+and adding the annotation `EventInfo`. Adding that annotation is important because the `Listener` will not work without it as it needs to be there to identify the `Event`.
+It is also important to put your parent in the `Listener` as it allows it to access the parent.
+When the `Listener` is sent to the `EventManager` it looks for `Listen`, which it uses the **method** that is connected with that annotation and invokes it.
 
 ```java
 import net.nerites.event.Listener;
@@ -62,9 +62,9 @@ public class MyTestListener extends Listener<MyTestClass> {
 }
 ```
 
-Using the `Subscribe`[^3] is pretty simple as well, you need the `EventManager`[^1] to use the **subscribe**[^8] method on the **class** you have the method with the `Subscribe`[^3] annotation in.
-Using the **subscribe**[^8] method in the same class as any method with the `Subscribe`[^3] annotation, and an `Event`[^4] for it's **only parameter**.
-Will allow the `EventManager`[^1] to put it in its map.
+Using the `Subscribe` is pretty simple as well, you need the `EventManager` to use the **subscribe** method on the **class** you have the method with the `Subscribe` annotation in.
+Using the **subscribe** method in the same class as any method with the `Subscribe` annotation, and an `Event` for it's **only parameter**.
+Will allow the `EventManager` to put it in its map.
 
 ```java
 import net.nerites.event.annotations.Subscribe;
@@ -86,7 +86,11 @@ public class MyTestClass {
 }
 ```
 
-# All Test Code
+<details>
+
+<summary>All Test Code</summary>
+
+## All Test Code
 
 ```java
 import net.nerites.event.Event;
@@ -139,14 +143,4 @@ public class MyTestClass {
     }
 }
 ```
-
-
-[^1]: link to eventmanager
-[^2]: asadddsadad
-[^3]: asdasdad
-[^4]: asdasdsadwa
-[^5]: asdasdasd
-[^6]: asdasda
-[^7]:  asdasdas
-
-[^8]: adsasd
+</details>
